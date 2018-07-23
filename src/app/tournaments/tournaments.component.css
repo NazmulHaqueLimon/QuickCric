@@ -1,0 +1,28 @@
+
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .trnments li { 
+    position: relative; 
+    background-color: rgb(196, 109, 109);
+    margin: .5em;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .trnments li:hover {
+    color: #607D8B;
+    background-color:  #607D8B;
+    
+  }
+  
+  .example-card:hover{
+    background-color:  rgb(191, 209, 211);
+  }
+  .example-card{
+    padding: 2%;
+    border-radius: 4px;
+    
+  }
+  

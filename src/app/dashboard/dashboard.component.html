@@ -1,0 +1,10 @@
+<div class="grid grid-pad">
+    <h3>Top Tournaments</h3>
+  <a *ngFor="let tournament of tournaments" class="col-1-4"
+      routerLink="/details/{{tournament.id}}">
+    <div class="content">
+      <h4>{{tournament.name}}</h4>
+    </div>
+  </a>
+</div>
+

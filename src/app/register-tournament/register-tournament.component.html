@@ -1,0 +1,29 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tournament Name" >
+  </mat-form-field>
+
+ <mat-form-field class="example-full-width">
+    <input matInput placeholder="Location" >
+  </mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Format">
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Venue" >
+  </mat-form-field>
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Total Teams" >
+  </mat-form-field>
+ 
+ <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Set Your Tournament Rules"></textarea>
+  </mat-form-field>
+
+</form>

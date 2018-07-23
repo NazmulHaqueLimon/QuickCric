@@ -1,0 +1,33 @@
+
+<mat-card class="example-card">
+         <mat-card-header>
+                  
+               <mat-card-title><h3>Register A Tournament Manager Account:</h3></mat-card-title>
+         </mat-card-header>
+            
+        <mat-card-content>
+         <p>
+                       
+           <input matInput placeholder="Full Name" >
+           <br>
+           <br>
+           <br>
+           <input matInput placeholder="Enter your email" [formControl]="email" required>
+           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+           <br>
+           <br>             
+           <input matInput placeholder="Type A password" [type]="hide ? 'password' : 'text'">
+           <br>
+           <br>                     
+           <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'">
+           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                               
+         </p>
+       </mat-card-content>
+
+         <mat-card-actions>
+                
+                 <button mat-raised-button type="submit" color="primary">Submit</button>
+         </mat-card-actions>
+ </mat-card>
+              

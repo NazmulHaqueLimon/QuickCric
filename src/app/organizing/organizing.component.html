@@ -1,0 +1,86 @@
+
+<div class="container"   fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1%" fxLayoutAlign="center">
+  <div class="p" fxFlex="75%" >
+
+      <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+          {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+        </button>
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Register</ng-template>
+              <app-register-tournament></app-register-tournament>
+              
+              <mat-form-field>
+                  
+                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Register</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Add Teams</ng-template>
+              <app-add-teams></app-add-teams>
+              <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+               
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Set Fixture</ng-template>
+              <app-fixture></app-fixture>
+              <mat-form-field>
+                <input matInput placeholder="Address" formControlName="thirdCtrl" required>
+               
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="fourthFormGroup">
+              <form [formGroup]="fourthFormGroup">
+
+                <ng-template matStepLabel>Arrange Match</ng-template>
+                <app-arrange-match></app-arrange-match>
+                <mat-form-field>
+                    <input matInput placeholder="Address" formControlName="fourthCtrl" required>
+                   
+                  </mat-form-field>
+         
+                <div>
+                   <button mat-button matStepperPrevious>Back</button>
+                   <button mat-button (click)="stepper.reset()">Reset</button>
+               </div>
+              </form>
+          </mat-step>
+        </mat-horizontal-stepper>
+        
+      
+  
+    
+  </div>
+  
+  <div class="q" fxFlex="25%">
+
+      <div class="qq" fxLayout="column" fxLayoutWrap fxLayoutGap=".3%">
+         
+         <app-organizer-profile></app-organizer-profile>
+        </div>
+  </div>
+</div>
